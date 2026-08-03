@@ -3,7 +3,14 @@ from app.models.models.chunk import Chunk
 from app.models.models.embeddingclass import EmbeddedChunk
 class EmbeddingService():
   def __init__(self,model_name:str):
-    self._model = SentenceTransformer(model_name)
+    self._model_name = model_name
+    self._model = None
+  def _get_model(self):
+    if self._model is None:
+      self._model = SentenceTransformer(self._model_name);
+    return self._model
+
+   
   def embed_chunks(self,chunks:list[Chunk]) ->list[EmbeddedChunk]:
     embeddings_chunk = []
     for chunk in chunks:
@@ -17,7 +24,7 @@ class EmbeddingService():
 
 
   def _embed_chunk(self,chunk:Chunk) ->list[float]:
-    embeddings = self._model.encode(chunk.text,convert_to_numpy=True).tolist()
+    embeddings = self._get_model().encode(chunk.text,convert_to_numpy=True).tolist()
     return embeddings
   
 
@@ -28,4 +35,4 @@ class EmbeddingService():
     )
 
   def embed_query(self,query:str)->list[float]:
-    return self._model.encode(query,convert_to_numpy=True).tolist()
+    return self._get_model().encode(query,convert_to_numpy=True).tolist()
