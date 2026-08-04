@@ -123,9 +123,3 @@ def chat(
 
 
 
-
-router = APIRouter()
-
-@router.get("/")
-def test():
-    return {"status": "ok"}
