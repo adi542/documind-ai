@@ -15,9 +15,9 @@ from fastapi import (
 #     get_upload_service,
 #     get_processing_service
 # )
-# from app.models.models.ChatRequest import ChatRequest
-# from app.schemas.upload_response import UploadResponse
-# from app.schemas.processing_response import ProcessingResponse
+from app.models.models.ChatRequest import ChatRequest
+from app.schemas.upload_response import UploadResponse
+from app.schemas.processing_response import ProcessingResponse
 
 # from app.models.models.document import DocumentStatus
 
