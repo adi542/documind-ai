@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     OPENAI_MODEL: str = "gpt-5-mini"
 
     EMBEDDING_MODEL: str = (
-        "sentence-transformers/all-MiniLM-L6-v2"
+        "text-embedding-3-small"
     )
 
     UPLOAD_DIRECTORY: str = "uploads"
@@ -18,7 +18,7 @@ class Settings(BaseSettings):
 
     CHUNK_OVERLAP: int = 100
 
-    EMBEDDING_DIMENSION:int=384
+    EMBEDDING_DIMENSION:int=1536
 
     model_config = SettingsConfigDict(
         env_file=".env",

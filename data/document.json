@@ -1,3 +1,22 @@
 [
-   
+    {
+        "id": "708f93f0-6812-4f35-b972-2ab58819a9b5",
+        "stored_filename": "708f93f0-6812-4f35-b972-2ab58819a9b5.pdf",
+        "original_filename": "space_1.pdf",
+        "file_type": "pdf",
+        "status": "processed",
+        "file_size": 1997701,
+        "uploaded_at": "2026-08-05T00:11:49.391438",
+        "pages": 32
+    },
+    {
+        "id": "800453da-bb08-49a5-8e5e-1be47c3e6c44",
+        "stored_filename": "800453da-bb08-49a5-8e5e-1be47c3e6c44.pdf",
+        "original_filename": "20. Application Layer Protocols.pdf",
+        "file_type": "pdf",
+        "status": "processed",
+        "file_size": 461036,
+        "uploaded_at": "2026-08-05T00:20:28.294970",
+        "pages": 3
+    }
 ]

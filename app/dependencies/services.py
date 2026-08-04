@@ -41,7 +41,12 @@ _processing_service = ProcessingService(
 
 _chunking_service = ChunkingService()
 
+_openai_client = OpenAI(
+    api_key=settings.OPENAI_API_KEY
+)
+
 _embedding_service = EmbeddingService(
+    client=_openai_client,
     model_name=settings.EMBEDDING_MODEL
 )
 
@@ -63,9 +68,7 @@ def get_processing_service() -> ProcessingService:
 def get_indexing_service() -> IndexingService:
     return _indexing_service
 
-_openai_client = OpenAI(
-    api_key=settings.OPENAI_API_KEY
-)
+
 
 _llm_service = OpenAILLMService(
     client=_openai_client,
