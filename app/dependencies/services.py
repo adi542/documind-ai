@@ -39,59 +39,73 @@ _processing_service = ProcessingService(
     processor=_document_processor
 )
 
-_chunking_service = ChunkingService()
+# _chunking_service = ChunkingService()
 
-_embedding_service = EmbeddingService(
-    model_name=settings.EMBEDDING_MODEL
-)
+# _embedding_service = EmbeddingService(
+#     model_name=settings.EMBEDDING_MODEL
+# )
 
-_indexing_service = IndexingService(
-    document_repository=_document_repository,
-    processing_service=_processing_service,
-    chunking_service=_chunking_service,
-    embedding_service=_embedding_service,
-    vector_store=_vector_store
-)
-def get_upload_service() -> UploadService:
-    return _upload_service
-
-
-def get_processing_service() -> ProcessingService:
-    return _processing_service
+# _indexing_service = IndexingService(
+#     document_repository=_document_repository,
+#     processing_service=_processing_service,
+#     chunking_service=_chunking_service,
+#     embedding_service=_embedding_service,
+#     vector_store=_vector_store
+# )
+# def get_upload_service() -> UploadService:
+#     return _upload_service
 
 
-def get_indexing_service() -> IndexingService:
-    return _indexing_service
-
-_openai_client = OpenAI(
-    api_key=settings.OPENAI_API_KEY
-)
-
-_llm_service = OpenAILLMService(
-    client=_openai_client,
-    model=settings.OPENAI_MODEL,
-)
-
-_retrieval_service =  RetriverService(
-    embedding_service=_embedding_service,
-    vectorStore=_vector_store
-)
-
-_prompt_builder = PromptBuilder()
-
-_chat_service = ChatService(
-    retrieval_service=_retrieval_service,
-    prompt_builder=_prompt_builder,
-    llm_service=_llm_service,
-)
-
-def get_chat_service() -> ChatService:
-    return _chat_service
+# def get_processing_service() -> ProcessingService:
+#     return _processing_service
 
 
-def get_llm_service() -> LLMService:
-    return _llm_service
+# def get_indexing_service() -> IndexingService:
+#     return _indexing_service
+
+# _openai_client = OpenAI(
+#     api_key=settings.OPENAI_API_KEY
+# )
+
+# _llm_service = OpenAILLMService(
+#     client=_openai_client,
+#     model=settings.OPENAI_MODEL,
+# )
+
+# _retrieval_service =  RetriverService(
+#     embedding_service=_embedding_service,
+#     vectorStore=_vector_store
+# )
+
+# _prompt_builder = PromptBuilder()
+
+# _chat_service = ChatService(
+#     retrieval_service=_retrieval_service,
+#     prompt_builder=_prompt_builder,
+#     llm_service=_llm_service,
+# )
+
+# def get_chat_service() -> ChatService:
+#     return _chat_service
 
 
-def get_retrieval_service() -> RetriverService:
-    return _retrieval_service
+# def get_llm_service() -> LLMService:
+#     return _llm_service
+
+
+# def get_retrieval_service() -> RetriverService:
+#     return _retrieval_service
+
+
+
+def get_indexing_service():
+    raise NotImplementedError
+
+def get_chat_service():
+    raise NotImplementedError
+
+def get_llm_service():
+    raise NotImplementedError
+
+def get_retrieval_service():
+    raise NotImplementedError
