@@ -6,15 +6,18 @@ from fastapi import (
     Depends
 )
 
-# from app.services.upload_service import UploadService
-# from app.services.processing_service import ProcessingService
-# from app.dependencies.services import (
-#     get_chat_service,
-# )
-# from app.dependencies.services import (
-#     get_upload_service,
-#     get_processing_service
-# )
+
+from app.services.upload_service import UploadService
+from app.services.processing_service import ProcessingService
+from app.dependencies.services import (
+    get_chat_service,
+)
+from app.dependencies.services import (
+    get_upload_service,
+    get_processing_service
+)
+
+
 from app.models.models.ChatRequest import ChatRequest
 from app.schemas.upload_response import UploadResponse
 from app.schemas.processing_response import ProcessingResponse
